@@ -10,6 +10,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 def test_create_project():
+
     driver = webdriver.Chrome()
     driver.set_window_size(1920, 1080)
 
@@ -17,6 +18,8 @@ def test_create_project():
     user = "MTI_group3"
     password = "HqHdMaHf6ZL737W"
     PROJECT_NAME = "AutoProject"
+
+
 
     username = driver.find_element(By.CSS_SELECTOR, "input#account")
     username.send_keys(user)
