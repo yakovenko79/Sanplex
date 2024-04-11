@@ -15,14 +15,18 @@ class TestCRUDProject:
         page.open()
         page.login(user, password)
         project_page = ProjectPage(browser, browser.current_url)
-        time.sleep(3)
         project_page.should_this_project_page()
         project_page.create_new_project()
         project_page.switch_tab_all()
-        time.sleep(3)
         project_page.should_project_in_a_projects_list()
 
-
-
-
-
+    def test_edit_project(self, browser):
+        page = BasePage(browser, LINK)
+        page.open()
+        page.login(user, password)
+        project_page = ProjectPage(browser, browser.current_url)
+        project_page.should_this_project_page()
+        project_page.switch_tab_all_edit()
+        project_page.dropdown_project_box()
+        project_page.edit_project()
+        project_page.should_update_project_in_a_projects_list()
