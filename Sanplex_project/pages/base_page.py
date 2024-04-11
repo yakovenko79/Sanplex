@@ -1,5 +1,4 @@
 from selenium.common import NoSuchElementException
-from selenium.webdriver.common.by import By
 
 from Sanplex_project.pages.locators import LoginLocators
 

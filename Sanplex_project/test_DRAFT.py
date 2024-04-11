@@ -15,18 +15,18 @@ def test_create_project():
     driver.set_window_size(1920, 1080)
 
     driver.get("https://mentorpiece.sanplex.com/")
-    user = "MTI_group3"
-    password = "HqHdMaHf6ZL737W"
+    USER = "MTI_group3"
+    PASSWORD = "HqHdMaHf6ZL737W"
     PROJECT_NAME = "AutoProject"
 
 
 
     username = driver.find_element(By.CSS_SELECTOR, "input#account")
-    username.send_keys(user)
+    username.send_keys(USER)
     # time.sleep(1)
 
     pswrd = driver.find_element(By.CSS_SELECTOR, "input#password")
-    pswrd.send_keys(password)
+    pswrd.send_keys(PASSWORD)
     # time.sleep(1)
 
     btn = driver.find_element(By.CSS_SELECTOR, "button#submit")
