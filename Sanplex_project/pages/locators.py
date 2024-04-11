@@ -27,10 +27,7 @@ class ProjectPageLocators():
     ZEN_EDITOR = (By.CSS_SELECTOR, "zen-editor")
     NAME_OF_CREATED_PROJECT = (By.XPATH, "//a[text()='AutoProject']")
     NAME_OF_UPDATED_PROJECT = (By.XPATH, "//a[text()='AutoProject_updated']")
-    DROPDOWN_PROJECT_BOX = (By.CSS_SELECTOR, "#table-project-browse > div.dtable-block.dtable-body > "
-                                             "div.dtable-cells.dtable-fixed-right > div > "
-                                             "div.dtable-cell.is-odd-row.is-first-in-row.is-last-in-row.is-last-row > "
-                                             "div > nav > button")
+    DROPDOWN_PROJECT_BOX = (By.XPATH, "//*[@id='table-project-browse']/div[2]/div[2]/div/div[last()]/div/nav/button")
     EDIT_PROJECT = (By.XPATH, "//div[text()='Edit Project']")
     SHOW_ADDIT_FIELDS = (By.CSS_SELECTOR, "button.btn.ghost.toggle-top-btn")
     PROJECT_MANAGER_FIELD = (By.XPATH, "/html/body/div[2]/div/div/div[2]/div/div[2]/form/div[5]/div/div[4]/div[2]/div")

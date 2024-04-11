@@ -59,12 +59,14 @@ class ProjectPage(BasePage):
         self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
         tab_all = self.browser.find_element(*ProjectPageLocators.ALL_TAB)
         tab_all.click()
+        time.sleep(1)
 
     def edit_project(self):
         edit_project_btn = self.browser.find_element(*ProjectPageLocators.EDIT_PROJECT)
         edit_project_btn.click()
         time.sleep(2)
-        assert self.browser.find_element(*ProjectPageLocators.PROJECT_NAME).text == "AutoProject", "Not your project"
+        name_project = self.browser.find_element(*ProjectPageLocators.PROJECT_NAME).text
+        assert name_project == "AutoProject", "Not your project"
         project_name = self.browser.find_element(*ProjectPageLocators.PROJECT_NAME)
         project_name.send_keys("_updated")
         description_frame = self.browser.find_element(*ProjectPageLocators.DESCRIPTION)
