@@ -6,5 +6,5 @@ It contains:
     2.1 locators.py - contains locators<br>
     2.2 base_page.py - contains base class (parent)<br>
     2.3 project_page.py - contains project class and corresponding functions<br>
-3. test_create_new_project.py - testing create new project
+3. test_crud_project.py - test suit for creating new project and edit new project
 4. test_DRAFT.py - draft for experiments
