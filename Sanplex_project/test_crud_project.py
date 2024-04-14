@@ -28,3 +28,15 @@ class TestCRUDProject:
         project_page.dropdown_project_box()
         project_page.edit_project()
         project_page.should_update_project_in_a_projects_list()
+
+    def test_delete_project(self, browser):
+        page = BasePage(browser, LINK)
+        page.open()
+        page.login(USER, PASSWORD)
+        project_page = ProjectPage(browser, browser.current_url)
+        project_page.should_this_project_page()
+        project_page.switch_tab_all_edit()
+        project_page.should_update_project_in_a_projects_list()
+        project_page.dropdown_project_box()
+        project_page.delete_project()
+        project_page.should_update_project_not_in_a_projects_list()
