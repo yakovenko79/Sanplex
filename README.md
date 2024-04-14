@@ -8,3 +8,12 @@ It contains:
     2.3 project_page.py - contains project class and corresponding functions<br>
 3. test_crud_project.py - test suit for creating new project and edit new project
 4. test_DRAFT.py - draft for experiments
+----------------------------------------------------------------
+test_crud_project.py
+Tests for CRUD the project are launched by running the class TestCRUDProject
+or sequential launch of tests:
+- test_create_project
+- test_edit_project
+- test_delete_project
+----------------------------------------------------------------
+paremetrization coming soon...

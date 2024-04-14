@@ -8,6 +8,12 @@ class LoginLocators():
 
 
 class ProjectPageLocators():
+    MODAL_DIALOG_WINDOW = (By.CSS_SELECTOR, "div.modal-dialog")
+    FRAME_DELETE_PROJECT = (By.CSS_SELECTOR, "div.modal")
+    CONFIRM_BTN = (By.CSS_SELECTOR, "button.btn.item.toolbar-item.btn-wide.primary")
+    DISMISS_BTN = (By.CSS_SELECTOR, "button.btn.item.toolbar-item.btn-wide.btn-default")
+    CONFIRM_TEXT = (By.CSS_SELECTOR, 'div.modal-body>div:nth-child(2)')
+    DELETE_PROJECT_BTN = (By.XPATH, "//div[text()='Delete']")
     PROJECT_PAGE_FRAME = (By.CSS_SELECTOR, "iframe#appIframe-project")
     CREATE_PROJECT_BTN = (By.CLASS_NAME, "create-project-btn")
     PROJECT_NAME = (By.CSS_SELECTOR, "textarea.is-required")

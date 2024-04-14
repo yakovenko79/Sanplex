@@ -1,6 +1,7 @@
 import time
 
-from selenium.webdriver import ActionChains
+from selenium.webdriver import ActionChains, Keys
+from selenium.webdriver.common.by import By
 
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -64,7 +65,7 @@ class ProjectPage(BasePage):
     def edit_project(self):
         edit_project_btn = self.browser.find_element(*ProjectPageLocators.EDIT_PROJECT)
         edit_project_btn.click()
-        time.sleep(2)
+        time.sleep(3)
         name_project = self.browser.find_element(*ProjectPageLocators.PROJECT_NAME).text
         assert name_project == "AutoProject", "Not your project"
         project_name = self.browser.find_element(*ProjectPageLocators.PROJECT_NAME)
@@ -97,7 +98,24 @@ class ProjectPage(BasePage):
         submit_btn.click()
 
     def should_update_project_in_a_projects_list(self):
+        assert self.is_element_present(*ProjectPageLocators.NAME_OF_UPDATED_PROJECT), "Project doesn't exist"
+
+    def delete_project(self):
         assert self.is_element_present(*ProjectPageLocators.NAME_OF_UPDATED_PROJECT)
+        delete_project_btn = self.browser.find_element(*ProjectPageLocators.DELETE_PROJECT_BTN)
+        delete_project_btn.click()
+        wait = WebDriverWait(self.browser, 3)
+        wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button.btn.item.toolbar-item.btn-wide.primary"))).click()
+
+    def should_update_project_not_in_a_projects_list(self):
+        assert self.is_element_present(*ProjectPageLocators.NAME_OF_UPDATED_PROJECT)
+        time.sleep(3)
+        assert self.is_element_not_present(*ProjectPageLocators.NAME_OF_UPDATED_PROJECT), "Project is still displayed"
+
+
+
+
+
 
 
 
