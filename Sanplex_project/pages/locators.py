@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class LoginLocators():
+    """Locators for login"""
     USERNAME = (By.CSS_SELECTOR, "input#account")
     PASSWORD = (By.CSS_SELECTOR, "input#password")
     BUTTON = (By.CSS_SELECTOR, "button#submit")
