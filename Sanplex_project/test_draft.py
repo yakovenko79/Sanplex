@@ -13,6 +13,7 @@ from Sanplex_project.pages.project_page import ProjectPage
 
 def test_create_project():
 
+    """test file"""
     page = ProjectPage()
     driver = webdriver.Chrome()
     driver.set_window_size(1920, 1080)
