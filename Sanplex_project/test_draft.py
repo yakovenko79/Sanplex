@@ -8,9 +8,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import visibility_of_element_located
 from selenium.webdriver.support.wait import WebDriverWait
 
+from Sanplex_project.pages.project_page import ProjectPage
+
 
 def test_create_project():
 
+    page = ProjectPage()
     driver = webdriver.Chrome()
     driver.set_window_size(1920, 1080)
 
