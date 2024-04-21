@@ -42,3 +42,8 @@ class ProjectPageLocators():
     BUDGET_FIELD = (By.XPATH, "/html/body/div[2]/div/div/div[2]/div/div[2]/form/div["
                               "5]/div/div[3]/div[2]/div/input")
     ALL_TAB = (By.XPATH, "/html/body/div/div/div[1]/div[1]/menu/li[1]/a")
+
+
+class SideBarLocators:
+
+    WORK_BTN = (By.XPATH,'// button // span[text() = "WORK"]')
