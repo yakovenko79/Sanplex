@@ -45,5 +45,8 @@ class ProjectPageLocators():
 
 
 class SideBarLocators:
+    """Locators for sidebar"""
+    WORK_BTN = (By.XPATH,'//button//span[text()="WORK"]')
+    TASKS_BTN = (By.XPATH,'//button//span[text()="Tasks"]')
 
-    WORK_BTN = (By.XPATH,'// button // span[text() = "WORK"]')
+
