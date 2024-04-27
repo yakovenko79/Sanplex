@@ -1,14 +1,15 @@
 from selenium.webdriver.common.by import By
 
 
-class LoginLocators():
+class LoginLocators:
     """Locators for login"""
     USERNAME = (By.CSS_SELECTOR, "input#account")
     PASSWORD = (By.CSS_SELECTOR, "input#password")
     BUTTON = (By.CSS_SELECTOR, "button#submit")
 
 
-class ProjectPageLocators():
+class ProjectPageLocators:
+    """Locators for Projects page and Add Project page """
     MODAL_DIALOG_WINDOW = (By.CSS_SELECTOR, "div.modal-dialog")
     FRAME_DELETE_PROJECT = (By.CSS_SELECTOR, "div.modal")
     CONFIRM_BTN = (By.CSS_SELECTOR, "button.btn.item.toolbar-item.btn-wide.primary")
@@ -29,7 +30,7 @@ class ProjectPageLocators():
     RADIOBUTTON_TURN_ON = (By.CSS_SELECTOR, "[for = multiple1]")
     SUBMIT_BTN = (By.CSS_SELECTOR, "button.submit-btn.btn")
     SWITCH_TAB_ALL = (By.CSS_SELECTOR, "li.nav-item.item:nth-child(1)")
-    SWITCH_TAB_ALL_EDIT = (By.XPATH, "//span[text()='ALL]")
+    SWITCH_TAB_ALL_EDIT = (By.XPATH, "//span[text()='ALL']")
     PROJECTS_LIST = (By.CSS_SELECTOR, '.is-last-row')
     ZEN_EDITOR = (By.CSS_SELECTOR, "zen-editor")
     NAME_OF_CREATED_PROJECT = (By.XPATH, "//a[text()='AutoProject']")
@@ -45,5 +46,24 @@ class ProjectPageLocators():
 
 
 class SideBarLocators:
+    """Locators for sidebar"""
+    WORK_BTN = (By.CSS_SELECTOR, 'button.sidebar-menu-header[data-type="work"]')
+    TASKS_BTN = (By.CSS_SELECTOR, 'button.sidebar-menu-header[data-type="task"]')
 
-    WORK_BTN = (By.XPATH,'// button // span[text() = "WORK"]')
+
+class HeaderLocators:
+    """Common locators for header"""
+    QUICK_ADD_BTN = (By.CSS_SELECTOR, 'button#quickAddMenu-toggle')
+    ADD_TASK_BTN = (By.CSS_SELECTOR, "menu.dropdown-menu.scrollbar-hover li:nth-child(3)")
+    ADD_STORY_BTN = (By.CSS_SELECTOR, 'menu.dropdown-menu.scrollbar-hover li:nth-child(2)')
+    ADD_BUG_BTN = (By.CSS_SELECTOR, 'menu.dropdown-menu.scrollbar-hover li:nth-child(1)')
+    MY_PAGE_FRAME = (By.CSS_SELECTOR, "iframe#appIframe-my")
+
+
+class TaskPageLocators:
+    """Locators for Tasks page and Add task page"""
+    TASK_NAME = (By.CSS_SELECTOR, "textarea.is-required")
+    TASK_TYPE_SELECT = (By.XPATH, '//label[text()="Type"]//following-sibling::div/div[@tabindex="-1"]')
+    TASK_DESCRIPTION_FRAME = (By.CLASS_NAME, "show-desc")
+    ZEN_EDITOR = (By.CSS_SELECTOR, "zen-editor")
+    TASK_TYPE_SELECT_DEV = (By.CSS_SELECTOR, 'li.menu-item.item[z-key="devel"]')
