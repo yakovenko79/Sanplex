@@ -9,6 +9,7 @@ class LoginLocators:
 
 
 class ProjectPageLocators:
+    """Locators for Projects page and Add Project page """
     MODAL_DIALOG_WINDOW = (By.CSS_SELECTOR, "div.modal-dialog")
     FRAME_DELETE_PROJECT = (By.CSS_SELECTOR, "div.modal")
     CONFIRM_BTN = (By.CSS_SELECTOR, "button.btn.item.toolbar-item.btn-wide.primary")

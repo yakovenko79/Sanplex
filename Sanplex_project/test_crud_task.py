@@ -15,7 +15,7 @@ class TestCRUDTask:
         page = BasePage(browser, LINK)
         page.open()
         page.login(USER, PASSWORD)
-        time.sleep(3)
+        time.sleep(5)
         side = SideBar(browser, browser.current_url)
         side.go_to_work_dropdown_menu()
         side.go_to_tasks_page()

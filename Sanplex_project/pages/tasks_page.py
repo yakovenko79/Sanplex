@@ -17,7 +17,6 @@ class TasksPage(BasePage):
     def create_new_task(self):
         """Creating new task with valid data"""
         self.browser.switch_to.frame(self.browser.find_element(*HeaderLocators.MY_PAGE_FRAME))
-
         quick_add_btn = self.browser.find_element(*HeaderLocators.QUICK_ADD_BTN)
         quick_add_btn.click()
         time.sleep(2)
