@@ -4,6 +4,8 @@ from selenium.webdriver import ActionChains
 
 from Sanplex_project.pages.base_page import BasePage
 from Sanplex_project.pages.locators import HeaderLocators, TaskPageLocators
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 TASK_NAME = "Auto Task"
 
@@ -22,16 +24,13 @@ class TasksPage(BasePage):
         time.sleep(2)
         add_task_btn = self.browser.find_element(*HeaderLocators.ADD_TASK_BTN)
         add_task_btn.click()
-        # time.sleep(3)
         task_name_field = self.browser.find_element(*TaskPageLocators.TASK_NAME)
         task_name_field.send_keys(TASK_NAME)
         description_frame = self.browser.find_element(*TaskPageLocators.TASK_DESCRIPTION_FRAME)
-        time.sleep(1)
         description_frame.click()
-        time.sleep(1)
-        ActionChains(self.browser).move_to_element(
-            self.browser.find_element(*TaskPageLocators.ZEN_EDITOR)).click().send_keys(
-            "autotest_task_description").perform()
+        zen_editor = self.browser.find_element(*TaskPageLocators.ZEN_EDITOR)
+        WebDriverWait(self.browser, 2).until(EC.element_to_be_clickable(zen_editor))
+        ActionChains(self.browser).move_to_element(zen_editor).click().send_keys("autotest_task_description").perform()
         task_type_list_btn = self.browser.find_element(*TaskPageLocators.TASK_TYPE_SELECT)
         task_type_list_btn.click()
         task_type_develop = self.browser.find_element(*TaskPageLocators.TASK_TYPE_SELECT_DEV)
