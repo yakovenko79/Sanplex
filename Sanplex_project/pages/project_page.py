@@ -53,6 +53,7 @@ class ProjectPage(BasePage):
         assert self.is_element_present(*ProjectPageLocators.NAME_OF_CREATED_PROJECT)
 
     def dropdown_project_box(self):
+        """Pressing the 3 dots dropdown project box button"""
         box = self.browser.find_element(*ProjectPageLocators.DROPDOWN_PROJECT_BOX)
         box.click()
 
@@ -63,6 +64,7 @@ class ProjectPage(BasePage):
         time.sleep(1)
 
     def edit_project(self):
+        """Editing the project"""
         edit_project_btn = self.browser.find_element(*ProjectPageLocators.EDIT_PROJECT)
         edit_project_btn.click()
         time.sleep(3)
@@ -98,9 +100,11 @@ class ProjectPage(BasePage):
         submit_btn.click()
 
     def should_update_project_in_a_projects_list(self):
+        """Check updated project is in a project list"""
         assert self.is_element_present(*ProjectPageLocators.NAME_OF_UPDATED_PROJECT), "Project doesn't exist"
 
     def delete_project(self):
+        """Deleting a project"""
         assert self.is_element_present(*ProjectPageLocators.NAME_OF_UPDATED_PROJECT)
         delete_project_btn = self.browser.find_element(*ProjectPageLocators.DELETE_PROJECT_BTN)
         delete_project_btn.click()
@@ -108,9 +112,12 @@ class ProjectPage(BasePage):
         wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button.btn.item.toolbar-item.btn-wide.primary"))).click()
 
     def should_update_project_not_in_a_projects_list(self):
+        """Check updated project is not in a projects list"""
         assert self.is_element_present(*ProjectPageLocators.NAME_OF_UPDATED_PROJECT)
         time.sleep(3)
         assert self.is_element_not_present(*ProjectPageLocators.NAME_OF_UPDATED_PROJECT), "Project is still displayed"
+
+
 
 
 
