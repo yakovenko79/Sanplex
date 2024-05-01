@@ -12,24 +12,24 @@ It contains:
 3. test_crud_project.py - test suit for creating, editing and deleting a project
 4. tests_crud_story.py - test suit for creating, editing and deleting user story
 5. tests_crud_task.py - test suit for creating, editing and deleting task
-----------------------------------------------------------------
-test_crud_project.py
-Tests for CRUD the project are launched by running the class TestCRUDProject
-or sequential launch of tests:
-- test_create_project
-- test_edit_project
-- test_delete_project
-----------------------------------------------------------------
-test_crud_story.py
-Tests for CRUD the user story are launched by running the class TestCRUDStory
-or sequential launch of tests:
-- test_create_story
-- test_edit_story
-- test_delete_story
-------------------------------------------------------------------
-test_crud_task.py
-Tests for CRUD the task are launched by running the class TestCRUDStory
-or sequential launch of tests:
--test_create_task
--------------------------------------------------------------------
-markers coming soon...
+----------------------------------------------------------------<br>
+test_crud_project.py<br>
+Tests for CRUD the project are launched by running the class TestCRUDProject<br>
+or sequential launch of tests:<br>
+- test_create_project<br>
+- test_edit_project<br>
+- test_delete_project<br>
+----------------------------------------------------------------<br>
+test_crud_story.py<br>
+Tests for CRUD the user story are launched by running the class TestCRUDStory<br>
+or sequential launch of tests:<br>
+- test_create_story<br>
+- test_edit_story<br>
+- test_delete_story<br>
+------------------------------------------------------------------<br>
+test_crud_task.py<br>
+Tests for CRUD the task are launched by running the class TestCRUDStory<br>
+or sequential launch of tests:<br>
+-test_create_task<br>
+-------------------------------------------------------------------<br>
+markers coming soon...<br>
