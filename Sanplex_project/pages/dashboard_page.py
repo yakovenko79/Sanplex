@@ -49,12 +49,8 @@ class SideBar(BasePage):
         time.sleep(3)
 
     def switch_tab_all(self):
-
-        time.sleep(3)
         self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
         tab_all = self.browser.find_element(*SideBarLocators.SWITCH_TAB_ALL)
-        time.sleep(3)
-        # WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable(tab_all)).click()
         tab_all.click()
 
 

@@ -78,6 +78,7 @@ class TaskPageLocators:
     
     
 class StoryPageLocators:
+    DELETE_STORY_BTN = (By.CSS_SELECTOR, "div.float-toolbar-view>div:last-child>div>a:last-child")
     STORIES_PAGE_HEADER = (By.CSS_SELECTOR, "#heading button span.text")
     STORY_CARD_ESTIMATION = (By.CSS_SELECTOR, "div.h-16>div:nth-child(2)>div:last-child")
     STORY_CARD_PRIORITY = (By.CSS_SELECTOR, "div.h-16 div:nth-child(5)>div:nth-child(2)")

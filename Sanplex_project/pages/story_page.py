@@ -57,7 +57,6 @@ class StoryPage(BasePage):
         press_submit_btn.click()
 
     def should_created_story_in_stories_list(self):
-        self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
         assert self.is_element_present(
             *StoryPageLocators.STORY_IN_THE_STORIES_LIST), "Story isn't created in the stories list"
 
@@ -104,3 +103,22 @@ class StoryPage(BasePage):
         list_est = value_estimate.split()
         number_est = list_est[0]
         assert number_est == "13", "Wrong estimation points"
+
+    def delete_story(self):
+        """Delete the story"""
+        edited_story = self.browser.find_element(*StoryPageLocators.EDITED_STORY)
+        edited_story.click()
+        time.sleep(2)
+        delete_btn = self.browser.find_element(*StoryPageLocators.DELETE_STORY_BTN)
+        delete_btn.click()
+        WebDriverWait(self.browser, 20).until(EC.element_to_be_clickable((By.XPATH, "//button//span[text()='Confirm']"))).click()
+
+    def is_the_story_deleted(self):
+        time.sleep(2)
+        assert self.is_element_not_present(*StoryPageLocators.EDITED_STORY), "Story wasn't deleted"
+
+    def should_created_story_in_stories_list_for_edit(self):
+        self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
+        assert self.is_element_present(
+            *StoryPageLocators.STORY_IN_THE_STORIES_LIST), "Story isn't created in the stories list"
+

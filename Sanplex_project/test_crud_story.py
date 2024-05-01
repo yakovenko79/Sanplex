@@ -26,7 +26,6 @@ class TestCRUDStory:
         sidebar.go_to_user_stories_list_from_sidebar()
         story = StoryPage(browser, browser.current_url)
         story.create_new_story()
-        sidebar.switch_tab_all()
         story.should_created_story_in_stories_list()
 
     def test_edit_story(self, browser):
@@ -41,10 +40,28 @@ class TestCRUDStory:
         sidebar.should_title_project_correct()
         sidebar.go_to_user_stories_list_from_sidebar()
         story = StoryPage(browser, browser.current_url)
-        story.should_created_story_in_stories_list()
+        story.should_created_story_in_stories_list_for_edit()
         story.dropdown_story_box()
         story.edit_story()
         story.is_the_story_edited()
+
+    def test_delete_story(self, browser):
+        page = BasePage(browser, LINK)
+        page.open()
+        page.login(USER, PASSWORD)
+        project_page = ProjectPage(browser, browser.current_url)
+        project_page.should_this_project_page()
+        sidebar = SideBar(browser, browser.current_url)
+        sidebar.go_to_projects_list()
+        sidebar.go_to_project()
+        sidebar.should_title_project_correct()
+        sidebar.go_to_user_stories_list_from_sidebar()
+        story = StoryPage(browser, browser.current_url)
+        story.should_created_story_in_stories_list_for_edit()
+        story.delete_story()
+        story.is_the_story_deleted()
+
+
 
 
 
