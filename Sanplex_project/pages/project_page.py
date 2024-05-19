@@ -24,7 +24,7 @@ class ProjectPage(BasePage):
         project_name_field = self.browser.find_element(*ProjectPageLocators.PROJECT_NAME)
         project_name_field.send_keys(PROJECT_NAME)
         description_frame = self.browser.find_element(*ProjectPageLocators.DESCRIPTION)
-        time.sleep(3)
+        time.sleep(2)
         description_frame.click()
         ActionChains(self.browser).move_to_element(self.browser.find_element(*ProjectPageLocators.ZEN_EDITOR)).click().send_keys(
             "test_description").perform()

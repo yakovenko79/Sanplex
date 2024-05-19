@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+
 # from Sanplex_project.test_crud_story import PROJECT
 PROJECT = 'New weird project 1'
 
@@ -50,6 +51,7 @@ class ProjectPageLocators:
 
 class SideBarLocators:
     """Locators for sidebar"""
+    BUGS_BTN = (By.XPATH, "//button/div/div/span[text()='Bugs']")
     SWITCH_TAB_ALL = (By.CSS_SELECTOR, "li.nav-item.item:nth-child(1)")
     STORY_BTN = (By.XPATH, "//button/div/div/span[text()='Stories']")
     SCOPES_DROPDOWN = (By.XPATH, "//*[@id='sidebarDemo']/div/div[2]/div/div/div[3]/button[2]/div")
@@ -75,8 +77,8 @@ class TaskPageLocators:
     TASK_DESCRIPTION_FRAME = (By.CLASS_NAME, "show-desc")
     ZEN_EDITOR = (By.CSS_SELECTOR, "zen-editor")
     TASK_TYPE_SELECT_DEV = (By.CSS_SELECTOR, 'li.menu-item.item[z-key="devel"]')
-    
-    
+
+
 class StoryPageLocators:
     DELETE_STORY_BTN = (By.CSS_SELECTOR, "div.float-toolbar-view>div:last-child>div>a:last-child")
     STORIES_PAGE_HEADER = (By.CSS_SELECTOR, "#heading button span.text")
@@ -108,4 +110,20 @@ class StoryPageLocators:
     ACCEPTANCE_CRITERIA_FIELD = (By.XPATH, '//zen-editor[@placeholder="Enter Acceptance Criteria"]')
     STORY_NAME = (By.CSS_SELECTOR, "textarea:nth-child(1)")
     ADD_STORY_BTN = (By.XPATH, "//*[@id='actionBar']/a")
-    STORY_LIST_THREE_DOTS_BTN= (By.CSS_SELECTOR, 'div > nav')
+    STORY_LIST_THREE_DOTS_BTN = (By.CSS_SELECTOR, 'div > nav')
+
+
+class BugsPageLocators:
+    EXPECTATIONS_TITLE = (By.XPATH, "//div[2]/div[3]/div[1]/span")
+    CREATED_BUG = (By.XPATH, '//a[text()="Test bug"]')
+    CREATE_BUG_BTN = (By.CSS_SELECTOR, "button.toolbar-item.submit-btn")
+    EXPECTATIONS_FIELD = (By.CSS_SELECTOR, "div.accordion-card>:nth-child(3)>:last-child")
+    RESULTS_FIELD = (By.XPATH, "div.accordion-card>div:nth-child(2)>div:nth-child(2)")
+    STEPS_INPUT_FIELD = (By.XPATH, "/html/body/div[3]/div/div/div[2]/div/div[2]/form/div[2]/div[1]/div[2]/div[2]/p")
+    STEPS_FIELD = (By.CSS_SELECTOR, "div.accordion-card>div:nth-child(1)>div:nth-child(2)")
+    RESULTS_INPUT_FIELD = (By.CSS_SELECTOR, "div.accordion-card>div:nth-child(2)>div:nth-child(2)")
+    TITLE_STEPS_TO_REPRODUCE = (By.XPATH, '//div/span[text()="Steps to Reproduce"]')
+    ZEN_EDITOR_STEPS = (By.CSS_SELECTOR, "div.accordion-card>div.form-group:nth-child(1)>div:nth-child(2)>div>zen-editor")
+    BUG_NAME_FIELD = (By.XPATH, "//form/div/div/textarea")
+    REPORT_BUG_BTN = (By.XPATH, "//a//span[text()='Report Bug']")
+    BUGS_TITLE = (By.XPATH, "//button/span[text()='Bugs']")

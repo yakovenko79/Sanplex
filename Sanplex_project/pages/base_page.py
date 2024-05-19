@@ -3,7 +3,7 @@ from selenium.common import NoSuchElementException
 from Sanplex_project.pages.locators import LoginLocators
 
 
-class BasePage():
+class BasePage:
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
