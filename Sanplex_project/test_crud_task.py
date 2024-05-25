@@ -12,6 +12,7 @@ LINK = "https://mentorpiece.sanplex.com/my-index.html"
 class TestCRUDTask:
 
     def test_create_task(self, browser):
+        """Check creating a task"""
         page = BasePage(browser, LINK)
         page.open()
         page.login(USER, PASSWORD)

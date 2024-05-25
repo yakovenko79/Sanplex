@@ -22,7 +22,6 @@ class TasksPage(BasePage):
         time.sleep(2)
         add_task_btn = self.browser.find_element(*HeaderLocators.ADD_TASK_BTN)
         add_task_btn.click()
-        # time.sleep(3)
         task_name_field = self.browser.find_element(*TaskPageLocators.TASK_NAME)
         task_name_field.send_keys(TASK_NAME)
         description_frame = self.browser.find_element(*TaskPageLocators.TASK_DESCRIPTION_FRAME)

@@ -57,17 +57,19 @@ class StoryPage(BasePage):
         press_submit_btn.click()
 
     def should_created_story_in_stories_list(self):
+        """Chech that the story is in the stories list"""
         assert self.is_element_present(
             *StoryPageLocators.STORY_IN_THE_STORIES_LIST), "Story isn't created in the stories list"
 
     def dropdown_story_box(self):
         """Pressing the 3 dots dropdown project box button"""
-        box = self.browser.find_element(*StoryPageLocators.STORY_LIST_THREE_DOTS_BTN)
-        box.click()
+        WebDriverWait(self.browser, 20).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, 'div > nav'))).click()
         edit_btn = self.browser.find_element(*StoryPageLocators.EDIT_BTN_IN_DROPDOWN_LIST)
         edit_btn.click()
 
     def edit_story(self):
+        """Edit the story"""
         time.sleep(2)
         ActionChains(self.browser).move_to_element(
             self.browser.find_element(*StoryPageLocators.EDIT_PRIORITY_DD)).click().click().perform()
@@ -114,10 +116,12 @@ class StoryPage(BasePage):
         WebDriverWait(self.browser, 20).until(EC.element_to_be_clickable((By.XPATH, "//button//span[text()='Confirm']"))).click()
 
     def is_the_story_deleted(self):
+        """Check that the story has been deleted"""
         time.sleep(2)
         assert self.is_element_not_present(*StoryPageLocators.EDITED_STORY), "Story wasn't deleted"
 
     def should_created_story_in_stories_list_for_edit(self):
+        """Check that created story for edit is in the stories list"""
         self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
         assert self.is_element_present(
             *StoryPageLocators.STORY_IN_THE_STORIES_LIST), "Story isn't created in the stories list"

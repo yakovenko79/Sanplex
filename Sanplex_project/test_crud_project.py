@@ -1,3 +1,5 @@
+import pytest
+
 from Sanplex_project.pages.base_page import BasePage
 from Sanplex_project.pages.project_page import ProjectPage
 
@@ -7,11 +9,14 @@ LINK = "http://mentorpiece.sanplex.com"
 
 
 class TestCRUDProject:
+    @pytest.fixture(scope="function", autouse=True)
+    def setup(self, browser):
+        self.page = BasePage(browser, LINK)
+        self.page.open()
+        self.page.login(USER, PASSWORD)
 
     def test_create_project(self, browser):
-        page = BasePage(browser, LINK)
-        page.open()
-        page.login(USER, PASSWORD)
+        """Create a new project"""
         project_page = ProjectPage(browser, browser.current_url)
         project_page.should_this_project_page()
         project_page.create_new_project()
@@ -19,9 +24,7 @@ class TestCRUDProject:
         project_page.should_project_in_a_projects_list()
 
     def test_edit_project(self, browser):
-        page = BasePage(browser, LINK)
-        page.open()
-        page.login(USER, PASSWORD)
+        """Edit the project"""
         project_page = ProjectPage(browser, browser.current_url)
         project_page.should_this_project_page()
         project_page.switch_tab_all_edit()
@@ -30,9 +33,7 @@ class TestCRUDProject:
         project_page.should_update_project_in_a_projects_list()
 
     def test_delete_project(self, browser):
-        page = BasePage(browser, LINK)
-        page.open()
-        page.login(USER, PASSWORD)
+        """Delete the project"""
         project_page = ProjectPage(browser, browser.current_url)
         project_page.should_this_project_page()
         project_page.switch_tab_all_edit()
