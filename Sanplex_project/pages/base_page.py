@@ -14,6 +14,7 @@ class BasePage:
         self.browser.get(self.url)
 
     def login(self, user, pswd):
+        """Login the user"""
         username = self.browser.find_element(*LoginLocators.USERNAME)
         username.send_keys(user)
         password = self.browser.find_element(*LoginLocators.PASSWORD)
@@ -22,6 +23,7 @@ class BasePage:
         button.click()
 
     def is_element_present(self, how, what):
+        """Check that the element is present on the page"""
         try:
             self.browser.find_element(how, what)
         except NoSuchElementException:
@@ -29,6 +31,7 @@ class BasePage:
         return True
 
     def is_element_not_present(self, how, what):
+        """Check that the element is not present on the page"""
         try:
             self.browser.find_element(how, what)
         except NoSuchElementException:

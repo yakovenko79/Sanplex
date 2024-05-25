@@ -57,8 +57,6 @@ class SideBar(BasePage):
         """Go to the projects bugs list from sidebar"""
         WebDriverWait(self.browser, 20).until(
             EC.element_to_be_clickable((By.XPATH, "//*[@id='sidebarDemo']/div/div[2]/div/div/div[3]/button[2]/div"))).click()
-        # WebDriverWait(self.browser, 20).until(
-        #     EC.element_to_be_clickable((By.XPATH, "//*[@id='sidebarDemo']/div/div[2]/div/div/div[3]/button[2]/div"))).click()
         bugs_btn = self.browser.find_element(*SideBarLocators.BUGS_BTN)
         bugs_btn.click()
 

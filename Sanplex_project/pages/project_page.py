@@ -15,9 +15,11 @@ PROJECT_NAME = "AutoProject"
 class ProjectPage(BasePage):
 
     def should_this_project_page(self):
+        """Returns True if the project page should be"""
         assert self.is_element_present(*ProjectPageLocators.PROJECT_PAGE_FRAME), "another page is displayed"
 
     def create_new_project(self):
+        """Creates a new project"""
         self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
         create_project_btn = self.browser.find_element(*ProjectPageLocators.CREATE_PROJECT_BTN)
         create_project_btn.click()
@@ -45,11 +47,13 @@ class ProjectPage(BasePage):
         submit_btn.click()
 
     def switch_tab_all(self):
+        """Switch to tab all"""
         tab_all = self.browser.find_element(*ProjectPageLocators.SWITCH_TAB_ALL)
         WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable(tab_all))
         tab_all.click()
 
     def should_project_in_a_projects_list(self):
+        """Check if project is in a list of projects"""
         assert self.is_element_present(*ProjectPageLocators.NAME_OF_CREATED_PROJECT)
 
     def dropdown_project_box(self):
@@ -58,6 +62,7 @@ class ProjectPage(BasePage):
         box.click()
 
     def switch_tab_all_edit(self):
+        """Switch to tab all"""
         self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
         tab_all = self.browser.find_element(*ProjectPageLocators.ALL_TAB)
         tab_all.click()

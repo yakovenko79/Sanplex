@@ -114,6 +114,19 @@ class StoryPageLocators:
 
 
 class BugsPageLocators:
+    CONFIRM_DELETE_BTN = (By.XPATH, "//button/span[text()='Confirm']")
+    EDITED_TITLE_BUG_IN_BUGS_LIST = (By.XPATH, "//a[text()='Test bug edited']")
+    SAVE_EDIT_BUG_BTN = (By.XPATH, '//button/span[text()="Save"]')
+    URGENT_PRIORITY = (By.XPATH, "//div[text()='Urgent']")
+    CRITICAL_SEVERITY = (By.XPATH, "//div[text()='Critical']")
+    PRIORITY_DD_BTN = (By.CSS_SELECTOR, "div.form-row:nth-child(4)>div:first-child>div")
+    SEVERITY_DD_BTN = (By.CSS_SELECTOR, "div.form-row:nth-child(4)>div:last-child>div")
+    EDIT_BUG_BTN = (By.CSS_SELECTOR, "div.flex.items-center>div>a:nth-child(1)")
+    DELETE_BUG_BTN = (By.CSS_SELECTOR, "div.flex.items-center>div>a:nth-child(3)")
+    TITLE_BUG = (By.CSS_SELECTOR, "div.bug-title")
+    TITLE_EDITED_BUG = (By.CSS_SELECTOR, "div.bug-title")
+    TEST_BUG = (By.XPATH, "//a[text()='Test bug']")
+    TEST_EDITED_BUG = (By.XPATH, "//a[text()='Test bug edited']")
     EXPECTATIONS_TITLE = (By.XPATH, "//div[2]/div[3]/div[1]/span")
     CREATED_BUG = (By.XPATH, '//a[text()="Test bug"]')
     CREATE_BUG_BTN = (By.CSS_SELECTOR, "button.toolbar-item.submit-btn")
@@ -123,7 +136,8 @@ class BugsPageLocators:
     STEPS_FIELD = (By.CSS_SELECTOR, "div.accordion-card>div:nth-child(1)>div:nth-child(2)")
     RESULTS_INPUT_FIELD = (By.CSS_SELECTOR, "div.accordion-card>div:nth-child(2)>div:nth-child(2)")
     TITLE_STEPS_TO_REPRODUCE = (By.XPATH, '//div/span[text()="Steps to Reproduce"]')
-    ZEN_EDITOR_STEPS = (By.CSS_SELECTOR, "div.accordion-card>div.form-group:nth-child(1)>div:nth-child(2)>div>zen-editor")
+    ZEN_EDITOR_STEPS = (By.CSS_SELECTOR, "div.accordion-card>div.form-group:nth-child(1)>div:nth-child("
+                                         "2)>div>zen-editor")
     BUG_NAME_FIELD = (By.XPATH, "//form/div/div/textarea")
     REPORT_BUG_BTN = (By.XPATH, "//a//span[text()='Report Bug']")
     BUGS_TITLE = (By.XPATH, "//button/span[text()='Bugs']")
