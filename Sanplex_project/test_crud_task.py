@@ -31,6 +31,6 @@ class TestCRUDTask:
     def test_create_task(self, browser):
         """Check creating a task"""
         tasks_page = TasksPage(browser, browser.current_url)
-     #  tasks_page.should_this_tasks_page()
+        tasks_page.should_this_tasks_page()
         tasks_page.create_new_task()
         tasks_page.should_created_task_in_tasks_list()

@@ -13,8 +13,9 @@ TASK_NAME = "Auto Task"
 class TasksPage(BasePage):
 
     def should_this_tasks_page(self):
-        """Returns True if the tasks page should be"""
-        assert self.is_element_present(*TaskPageLocators.TASK_LIST_FRAME), "another page is displayed"
+        """Check that it is Tasks page"""
+        time.sleep(2)
+        assert "project-task" in self.browser.current_url, "another page is displayed"
 
     def create_new_task(self):
         """Creating new task with valid data"""

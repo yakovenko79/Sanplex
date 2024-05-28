@@ -77,10 +77,11 @@ class TaskPageLocators:
     TASK_DESCRIPTION_FRAME = (By.CLASS_NAME, "show-desc")
     ZEN_EDITOR = (By.CSS_SELECTOR, "zen-editor")
     TASK_TYPE_SELECT_DEV = (By.CSS_SELECTOR, 'li.menu-item.item[z-key="devel"]')
-    TASK_LIST_FRAME= (By.CSS_SELECTOR,  "*[class='m-project-task']")
+    TASK_LIST_FRAME = (By.CSS_SELECTOR,  "*[class='m-project-task']")
     ADD_TASK_BTN = (By.XPATH, "//a//span[text()='Add Task']")
     SUBMIT_BTN = (By.CSS_SELECTOR, "button.submit-btn")
     TASK_IN_THE_TASKS_LIST = (By.XPATH, '//div//a[text()="Auto Task"]')
+    TASKS_TITLE = (By.XPATH, "//button/span[text()='Tasks']")
 
 class StoryPageLocators:
     DELETE_STORY_BTN = (By.CSS_SELECTOR, "div.float-toolbar-view>div:last-child>div>a:last-child")

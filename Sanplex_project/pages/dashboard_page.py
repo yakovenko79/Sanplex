@@ -20,7 +20,7 @@ class SideBar(BasePage):
     def go_to_tasks_page_from_sidebar(self):
         """Going to the page Tasks by clicking the Tasks button on the sidebar"""
         WebDriverWait(self.browser, 20).until(
-            EC.element_to_be_clickable((By.XPATH, "//*[@id='sidebarDemo']/div/div[2]/div/div/div[3]/button[2]/div"))).click()   #Scopes button on the sidebar
+            EC.element_to_be_clickable((By.XPATH, "//*[@id='sidebarDemo']/div/div[2]/div/div/div[3]/button[2]/div"))).click()   #Scopes button in the sidebar
         tasks_btn = self.browser.find_element(*SideBarLocators.TASKS_BTN)
         tasks_btn.click()
 
