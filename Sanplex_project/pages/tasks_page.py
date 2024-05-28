@@ -38,4 +38,10 @@ class TasksPage(BasePage):
         task_type_list_btn.click()
         task_type_develop = self.browser.find_element(*TaskPageLocators.TASK_TYPE_SELECT_DEV)
         task_type_develop.click()
-        time.sleep(2)
+        press_submit_btn = self.browser.find_element(*TaskPageLocators.SUBMIT_BTN)
+        press_submit_btn.click()
+
+    def should_created_task_in_tasks_list(self):
+        """Check that the story is in the stories list"""
+        assert self.is_element_present(
+            *TaskPageLocators.TASK_IN_THE_TASKS_LIST), "Task isn't created in the tasks list"
