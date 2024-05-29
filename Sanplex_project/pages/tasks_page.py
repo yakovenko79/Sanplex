@@ -1,7 +1,6 @@
 import time
 
 from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
 
 from Sanplex_project.pages.base_page import BasePage
 from Sanplex_project.pages.locators import TaskPageLocators, ProjectPageLocators
@@ -20,12 +19,6 @@ class TasksPage(BasePage):
 
     def create_new_task(self):
         """Creating new task with valid data"""
-        #   self.browser.switch_to.frame(self.browser.find_element(*HeaderLocators.MY_PAGE_FRAME))
-        #   quick_add_btn = self.browser.find_element(*HeaderLocators.QUICK_ADD_BTN)
-        #   quick_add_btn.click()
-        #   time.sleep(2)
-        #   add_task_btn = self.browser.find_element(*HeaderLocators.ADD_TASK_BTN)
-        #   add_task_btn.click()
         self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
         add_task_btn = self.browser.find_element(*TaskPageLocators.ADD_TASK_BTN)
         add_task_btn.click()
@@ -48,21 +41,25 @@ class TasksPage(BasePage):
         assert self.is_element_present(
             *TaskPageLocators.CREATED_TASK), "Task isn't created in the tasks list"
 
-    def should_created_task_in_tasks_list_for_edit(self):
+    def should_task_in_tasks_list(self, edited=False):
         """Check that created task for edit is in the tasks list"""
         self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
         per_page_btn = self.browser.find_element(*TaskPageLocators.PER_PAGE_BTN)
         per_page_btn.click()
         per_page_50_btn = self.browser.find_element(*TaskPageLocators.PER_PAGE_50_BTN)
         per_page_50_btn.click()
-        assert self.is_element_present(
-            *TaskPageLocators.CREATED_TASK), "Task isn't created in the tasks list"
+        if edited:
+            assert self.is_element_present(
+                *TaskPageLocators.EDITED_TASK), "Task isn't created in the tasks list"
+        else:
+            assert self.is_element_present(
+                *TaskPageLocators.CREATED_TASK), "Task isn't created in the tasks list"
 
     def edit_task(self):
         """Edit task"""
         test_task = self.browser.find_element(*TaskPageLocators.CREATED_TASK)
         test_task.click()
-        time.sleep(2)
+        time.sleep(3)
         edit_btn = self.browser.find_element(*TaskPageLocators.EDIT_TASK_BTN)
         edit_btn.click()
         task_name = self.browser.find_element(*TaskPageLocators.TASK_NAME_FIELD)
@@ -75,4 +72,5 @@ class TasksPage(BasePage):
     def is_the_task_edited(self):
         """Check that the edited task is in the tasks list"""
         assert self.is_element_present(*TaskPageLocators.EDITED_TASK), "Edited task isn't in the tasks list"
+
 
