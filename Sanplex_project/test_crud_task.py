@@ -34,3 +34,10 @@ class TestCRUDTask:
         tasks_page.should_this_tasks_page()
         tasks_page.create_new_task()
         tasks_page.should_created_task_in_tasks_list()
+
+    def test_edit_task(self, browser):
+        """Test editing created in a previous step task"""
+        task = TasksPage(browser, browser.current_url)
+        task.should_created_task_in_tasks_list_for_edit()
+        task.edit_task()
+        task.is_the_task_edited()
