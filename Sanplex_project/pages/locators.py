@@ -77,6 +77,23 @@ class TaskPageLocators:
     TASK_DESCRIPTION_FRAME = (By.CLASS_NAME, "show-desc")
     ZEN_EDITOR = (By.CSS_SELECTOR, "zen-editor")
     TASK_TYPE_SELECT_DEV = (By.CSS_SELECTOR, 'li.menu-item.item[z-key="devel"]')
+    TASK_LIST_FRAME = (By.CSS_SELECTOR, "*[class='m-project-task']")
+    ADD_TASK_BTN = (By.XPATH, "//a//span[text()='Add Task']")
+    SUBMIT_BTN = (By.CSS_SELECTOR, "button.submit-btn")
+    CREATED_TASK = (By.XPATH, '//div//a[text()="Auto Task"]')
+    EDITED_TASK = (By.XPATH, '//div//a[text()="Auto Task edited"]')
+    TASKS_TITLE = (By.XPATH, "//button/span[text()='Tasks']")
+    PER_PAGE_BTN = (By.XPATH, '//*[@id="table-project-task"]/div[3]/nav/button')
+    PER_PAGE_50_BTN = (By.CSS_SELECTOR, 'li:nth-child(10)')
+    EDIT_TASK_BTN = (By.CSS_SELECTOR, "div.flex.items-center>div>a:nth-child(1)")
+    TASK_NAME_FIELD = (By.XPATH, "//form/div/div/textarea")
+    TASK_ESTIMATION = (By.XPATH, '//*[@id="4"]')
+    SAVE_EDIT_BTN = (By.XPATH, '//button/span[text()="Save"]')
+    DELETE_TASK_BTN = (By.CSS_SELECTOR, "div.flex.items-center>div>a:nth-child(3)")
+    TASK_TITLE_SORT_BTN = (By.XPATH, '//*[@id="table-project-task"]/div[1]/div[1]/div/div[2]/div/a[1]')
+#    TASK_TITLE_SORT_DESC = (By.CSS_SELECTOR, 'a.dtable-sort-link>div[class="dtable-sort dtable-sort-desc"]')
+    TASK_TITLE_SORT_ASC = (By.XPATH, '//*[@id="table-project-task"]/div[1]/div[1]/div/div[2]/div/a[1]/div['
+                                     '@class="dtable-sort dtable-sort-asc"]')
 
 
 class StoryPageLocators:
