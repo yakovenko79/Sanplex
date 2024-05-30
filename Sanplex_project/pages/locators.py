@@ -89,6 +89,11 @@ class TaskPageLocators:
     TASK_NAME_FIELD = (By.XPATH, "//form/div/div/textarea")
     TASK_ESTIMATION = (By.XPATH, '//*[@id="4"]')
     SAVE_EDIT_BTN = (By.XPATH, '//button/span[text()="Save"]')
+    DELETE_TASK_BTN = (By.CSS_SELECTOR, "div.flex.items-center>div>a:nth-child(3)")
+    TASK_TITLE_SORT_BTN = (By.XPATH, '//*[@id="table-project-task"]/div[1]/div[1]/div/div[2]/div/a[1]')
+#    TASK_TITLE_SORT_DESC = (By.CSS_SELECTOR, 'a.dtable-sort-link>div[class="dtable-sort dtable-sort-desc"]')
+    TASK_TITLE_SORT_ASC = (By.XPATH, '//*[@id="table-project-task"]/div[1]/div[1]/div/div[2]/div/a[1]/div['
+                                     '@class="dtable-sort dtable-sort-asc"]')
 
 
 class StoryPageLocators:

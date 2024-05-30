@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from Sanplex_project.pages.base_page import BasePage
@@ -42,3 +44,5 @@ class TestCRUDTask:
         """Test deleting created task"""
         task = TasksPage(browser, browser.current_url)
         task.should_task_in_tasks_list(True)
+        task.delete_task()
+        task.is_task_deleted()

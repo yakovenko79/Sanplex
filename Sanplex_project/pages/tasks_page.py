@@ -1,6 +1,7 @@
 import time
 
 from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
 
 from Sanplex_project.pages.base_page import BasePage
 from Sanplex_project.pages.locators import TaskPageLocators, ProjectPageLocators
@@ -48,12 +49,16 @@ class TasksPage(BasePage):
         per_page_btn.click()
         per_page_50_btn = self.browser.find_element(*TaskPageLocators.PER_PAGE_50_BTN)
         per_page_50_btn.click()
+        if self.is_element_not_present(*TaskPageLocators.TASK_TITLE_SORT_ASC):
+            title_sort_btn = self.browser.find_element(*TaskPageLocators.TASK_TITLE_SORT_BTN)
+            title_sort_btn.click()
+            time.sleep(2)
         if edited:
             assert self.is_element_present(
-                *TaskPageLocators.EDITED_TASK), "Task isn't created in the tasks list"
+                *TaskPageLocators.EDITED_TASK), "Edited task isn't in the tasks list"
         else:
             assert self.is_element_present(
-                *TaskPageLocators.CREATED_TASK), "Task isn't created in the tasks list"
+                *TaskPageLocators.CREATED_TASK), "Created task isn't in the tasks list"
 
     def edit_task(self):
         """Edit task"""
@@ -71,6 +76,23 @@ class TasksPage(BasePage):
 
     def is_the_task_edited(self):
         """Check that the edited task is in the tasks list"""
+        time.sleep(2)
         assert self.is_element_present(*TaskPageLocators.EDITED_TASK), "Edited task isn't in the tasks list"
+
+    def delete_task(self):
+        deleting_task = self.browser.find_element(*TaskPageLocators.EDITED_TASK)
+        deleting_task.click()
+        time.sleep(2)
+        delete_task_btn = self.browser.find_element(*TaskPageLocators.DELETE_TASK_BTN)
+        delete_task_btn.click()
+        WebDriverWait(self.browser, 20).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "button.btn.item.toolbar-item.btn-wide.primary"))).click()
+        time.sleep(3)
+
+    def is_task_deleted(self):
+        """Check if the task has been deleted"""
+        time.sleep(2)
+#        self.browser.switch_to.frame(self.browser.find_element(*ProjectPageLocators.PROJECT_PAGE_FRAME))
+        assert self.is_element_not_present(*TaskPageLocators.EDITED_TASK), "Task wasn't deleted"
 
 
