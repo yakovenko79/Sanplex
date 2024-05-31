@@ -6,7 +6,7 @@ from Sanplex_project.pages.dashboard_page import SideBar
 from Sanplex_project.pages.project_page import ProjectPage
 
 USER = "MTI_group3"
-PASSWORD = "HqHdMaHf6ZL737W"
+PASSWORD = ""
 LINK = "http://mentorpiece.sanplex.com"
 
 

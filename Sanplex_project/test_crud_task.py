@@ -8,7 +8,7 @@ from Sanplex_project.pages.project_page import ProjectPage
 from Sanplex_project.pages.tasks_page import TasksPage
 
 USER = "MTI_group3"
-PASSWORD = "HqHdMaHf6ZL737W"
+PASSWORD = ""
 LINK = "http://mentorpiece.sanplex.com"
 
 
