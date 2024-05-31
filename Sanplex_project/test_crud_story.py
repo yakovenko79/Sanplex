@@ -7,7 +7,7 @@ from Sanplex_project.pages.project_page import ProjectPage
 from Sanplex_project.pages.dashboard_page import SideBar
 from Sanplex_project.pages.story_page import StoryPage
 
-USER = "MTI_group3"
+USER = ""
 PASSWORD = ""
 LINK = "http://mentorpiece.sanplex.com"
 PROJECT = "Next weird project 1"

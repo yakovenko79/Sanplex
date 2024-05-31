@@ -5,7 +5,7 @@ from Sanplex_project.pages.bugs_page import BugsPage
 from Sanplex_project.pages.dashboard_page import SideBar
 from Sanplex_project.pages.project_page import ProjectPage
 
-USER = "MTI_group3"
+USER = ""
 PASSWORD = ""
 LINK = "http://mentorpiece.sanplex.com"
 

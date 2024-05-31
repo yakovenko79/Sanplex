@@ -3,7 +3,7 @@ import pytest
 from Sanplex_project.pages.base_page import BasePage
 from Sanplex_project.pages.project_page import ProjectPage
 
-USER = "MTI_group3"
+USER = ""
 PASSWORD = ""
 LINK = "http://mentorpiece.sanplex.com"
 

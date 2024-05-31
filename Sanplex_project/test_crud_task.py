@@ -1,5 +1,3 @@
-import time
-
 import pytest
 
 from Sanplex_project.pages.base_page import BasePage
@@ -7,7 +5,7 @@ from Sanplex_project.pages.dashboard_page import SideBar
 from Sanplex_project.pages.project_page import ProjectPage
 from Sanplex_project.pages.tasks_page import TasksPage
 
-USER = "MTI_group3"
+USER = ""
 PASSWORD = ""
 LINK = "http://mentorpiece.sanplex.com"
 
