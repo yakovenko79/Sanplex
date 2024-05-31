@@ -43,4 +43,13 @@ or sequential launch of tests:<br>
 - test_edit_bug<br>
 - test_delete_bug<br>
 ---------------------------------------------------------------------
+test_crud_task.py
+Tests for CRUD the task are launched by running the class TestCRUDBugs<br>
+or sequential launch of tests:<br>
+- test_create_task<br>
+- test_edit_task<br>
+- test_delete_task<br>
+---------------------------------------------------------------------
+credentials have removed<br>
 markers coming soon...<br>
+---------------------------------------------------------------------
