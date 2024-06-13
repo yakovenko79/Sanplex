@@ -1,4 +1,4 @@
-Sanplex_project is Automation QA project<br>
+<h2>Sanplex_project is Automation QA project</h2><br>
 
 It contains:
 1. conftest.py - fixtures and driver initialization
@@ -53,7 +53,7 @@ or sequential launch of tests:<br>
 - test_delete_task<br>
 ---------------------------------------------------------------------
 credentials have removed<br>
-markers coming soon...<br>
+
 Dev stack:<br>
 - Python
 - Selenium
