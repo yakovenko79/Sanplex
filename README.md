@@ -35,6 +35,8 @@ test_crud_task.py<br>
 Tests for CRUD the task are launched by running the class TestCRUDStory<br>
 or sequential launch of tests:<br>
 - test_create_task<br>
+- test_edit_task<br>
+- test_delete_task<br>
 -------------------------------------------------------------------
 test_crud_bug.py<br>
 Tests for CRUD the bug are launched by running the class TestCRUDBugs<br>
@@ -52,4 +54,9 @@ or sequential launch of tests:<br>
 ---------------------------------------------------------------------
 credentials have removed<br>
 markers coming soon...<br>
+Dev stack:<br>
+- Python
+- Selenium
+- Pytest
+
 ---------------------------------------------------------------------
