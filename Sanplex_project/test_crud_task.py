@@ -7,7 +7,7 @@ from Sanplex_project.pages.tasks_page import TasksPage
 
 USER = ""
 PASSWORD = ""
-LINK = "http://mentorpiece.sanplex.com"
+LINK = "http://{domain}.sanplex.com"
 
 
 class TestCRUDTask:

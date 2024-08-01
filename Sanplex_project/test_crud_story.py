@@ -1,5 +1,3 @@
-import time
-
 import pytest
 
 from Sanplex_project.pages.base_page import BasePage
@@ -9,7 +7,7 @@ from Sanplex_project.pages.story_page import StoryPage
 
 USER = ""
 PASSWORD = ""
-LINK = "http://mentorpiece.sanplex.com"
+LINK = "http://{domain}.sanplex.com"
 PROJECT = "Next weird project 1"
 
 

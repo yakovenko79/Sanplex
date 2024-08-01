@@ -7,7 +7,7 @@ from Sanplex_project.pages.project_page import ProjectPage
 
 USER = ""
 PASSWORD = ""
-LINK = "http://mentorpiece.sanplex.com"
+LINK = "http://{domain}.sanplex.com"
 
 
 class TestCRUDBugs:
